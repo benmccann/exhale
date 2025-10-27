@@ -3,17 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <title>exhale</title>
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self'"
-    />
-    <meta
-      http-equiv="X-Content-Security-Policy"
-      content="default-src 'self'; script-src 'self'"
-    />
     <link rel="stylesheet" type="text/css" href="./index.css">
   </head>
   <body>
-    <script src="./dist/renderer.js"></script>
+    <script type="module" src="./dist/tauri-init.js"></script>
+    <script type="module" src="./dist/renderer.js"></script>
   </body>
 </html>

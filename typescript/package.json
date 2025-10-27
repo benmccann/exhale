@@ -3,37 +3,36 @@
   "version": "1.4.7",
   "description": "A customizable visual indicator to remind you to breathe and facilitate breathwork practice",
   "scripts": {
-    "build": "tsc",
+    "vite": "vite",
+    "build": "tsc && vite build",
     "watch": "tsc -w",
     "lint": "eslint ./src",
-    "start": "yarn run build && electron ./dist/main.js",
-    "dist": "npx electron-packager . --platform=linux,win32,darwin --overwrite",
-    "dist:linux": "npx electron-packager . --platform=linux --overwrite",
-    "dist:mac": "npx electron-packager . --platform=darwin --overwrite",
-    "dist:windows": "npx electron-packager . --platform=win32 --overwrite"
+    "tauri": "tauri",
+    "dev": "tauri dev",
+    "tauri:build": "tauri build",
+    "start": "yarn run dev",
+    "dist": "yarn run tauri:build"
   },
-  "build": {
-    "appId": "exhale",
-    "mac": {
-      "category": "healthcare-fitness"
-    }
-  },
-  "main": "./dist/main.js",
   "repository": "https://github.com/peterklingelhofer/exhale",
   "keywords": [
-    "Electron",
-    "typescript"
+    "tauri",
+    "typescript",
+    "breathwork"
   ],
   "author": "peterklingelhofer",
   "license": "Apache-2.0",
   "devDependencies": {
     "@electron/packager": "^19.0.1",
     "@eslint/js": "^9.38.0",
+    "@tauri-apps/cli": "^2.9.1",
     "electron": "^38.4.0",
     "eslint": "^9.38.0",
     "typescript": "^5.4.5",
-    "typescript-eslint": "^8.46.2"
+    "typescript-eslint": "^8.46.2",
+    "vite": "^7.1.12"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@tauri-apps/api": "^2.9.0"
+  },
   "packageManager": "yarn@1.22.22+sha1.ac34549e6aa8e7ead463a7407e1c7390f61a6610"
 }
